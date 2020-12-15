@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HueScripts</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <link href="styles/main.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <button type="button" id="PRIJS" class="btn btn-success btn-block">Prijs</button>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <button type="button" id="APPLAUS" class="btn btn-default btn-block">Applaus</button>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <button type="button" id="LACHEN" class="btn btn-primary btn-block">Lachen</button>
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 text-center font-small">
+                    <i><a href="http://www.jvpoppel.com" target="_blank">©Johan van Poppel 2020</a></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center font-small">
+                    <i><a href="https://github.com/jvpoppel/HuePad" target="_blank">Current build: 15-12-2020. Check my GitHub for development builds!</a></i>
+                </div>
+            </div>
+
+            <!-- Modal Select IP -->
+            <div id="ipModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">No bridge found!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>No Philips Hue bridge was found! Please select one from the list below,
+                            or check your connection to the bridge if it does not show up.
+                            To refresh the search results, please refresh the page.</p>
+                            <select id="bridgeSelect"></select>
+                            <button type="button" id="btnBridgeSelect" name="btnBridgeSelect" class="btn btn-info btn-sm">Select bridge</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Connect Bridge -->
+            <div id="bridgeModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Connect your bridge</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="discoverText">Push the link button on your Philips Hue Bridge</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Connection Success -->
+            <div id="successModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Success!</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Bridge successfully connected! You can continue using the site now.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- JQuery and Bootstrap libraries -->
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <!-- Own scripts -->
+        <script src="dist/bundle.js" type="text/javascript"></script>
+    </body>
+</html>

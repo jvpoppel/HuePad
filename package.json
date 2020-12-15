@@ -1,0 +1,42 @@
+{
+  "name": "huepad",
+  "version": "1.0.0",
+  "description": "Web-based Philips Hue soundpad.",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.test.ts --require test/setup.ts",
+    "clean": "npm run clean-build-steps && rm -rf dist",
+    "tsc": "./node_modules/.bin/tsc",
+    "webpack": "webpack",
+    "clean-build-steps": "rm -rf build-tsc",
+    "build": "npm run clean && npm run tsc && npm run webpack && npm run clean-build-steps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvpoppel/HuePad.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvpoppel/HuePad/issues"
+  },
+  "homepage": "https://github.com/jvpoppel/HuePad#readme",
+  "dependencies": {
+    "@types/jquery": "^3.5.4",
+    "@types/node": "^14.14.6",
+    "chai-jquery": "^2.1.0",
+    "typescript": "^4.0.3",
+    "typescript-map": "0.0.7",
+    "webpack": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "4.5.1",
+    "@types/chai": "4.2.14",
+    "@types/mocha": "8.0.4",
+    "chai": "4.2.0",
+    "mocha": "8.2.1",
+    "ts-node": "9.1.0",
+    "webpack-cli": "4.2.0"
+  }
+}
