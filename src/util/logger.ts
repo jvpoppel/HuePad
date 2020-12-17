@@ -7,7 +7,7 @@ enum LOG_SEVERITY {
 
 export class Logger {
 
-    private readonly PRINT_SEVERITY: LOG_SEVERITY = LOG_SEVERITY.DEBUG;
+    private readonly PRINT_SEVERITY: LOG_SEVERITY = LOG_SEVERITY.INFO;
 
     private static instance: Logger;
 

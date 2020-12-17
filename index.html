@@ -2,37 +2,59 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>HueScripts</title>
+        <title>HuePad</title>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
         <link href="styles/main.css" rel="stylesheet" type="text/css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body style="background-color:midnightblue">
         <div class="container">
             <div class="row">
+                <div class="col-sm-2 text-center"></div>
                 <div class="col-sm-4 text-center">
                     <button type="button" id="PRIJS" class="btn btn-success btn-block">Prijs</button>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <button type="button" id="APPLAUS" class="btn btn-default btn-block">Applaus</button>
+                    <button type="button" id="PRICE" class="btn btn-success btn-block">Price</button>
+                </div>
+
+                <div class="col-sm-2 text-center"></div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-sm-2 text-center"></div>
+                <div class="col-sm-4 text-center">
+                    <button type="button" id="APPLAUS" class="btn btn-primary btn-block">Applaus</button>
                 </div>
                 <div class="col-sm-4 text-center">
                     <button type="button" id="LACHEN" class="btn btn-primary btn-block">Lachen</button>
                 </div>
+                <div class="col-sm-2 text-center"></div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-sm-2 text-center"></div>
+                <div class="col-sm-4 text-center">
+                    <button type="button" id="SPANNEND" class="btn btn-warning btn-block">Spannend</button>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <button type="button" id="STOP" class="btn btn-danger btn-block">Stop</button>
+                </div>
+                <div class="col-sm-2 text-center"></div>
             </div>
 
             <hr>
-            <div class="row">
-                <div class="col-sm-12 text-center font-small">
-                    <i><a href="http://www.jvpoppel.com" target="_blank">©Johan van Poppel 2020</a></i>
+            <footer>
+                <div class="row top-buffer">
+                    <div class="col-sm-12 text-center font-small">
+                        <i><a href="http://www.jvpoppel.com" target="_blank">©Johan van Poppel 2020</a></i>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 text-center font-small">
-                    <i><a href="https://github.com/jvpoppel/HuePad" target="_blank">Current build: 15-12-2020. Check my GitHub for development builds!</a></i>
+                <div class="row">
+                    <div class="col-sm-12 text-center font-small">
+                        <i><a href="https://github.com/jvpoppel/HuePad" target="_blank">Current build: 15-12-2020. Check my GitHub for development builds!</a></i>
+                    </div>
                 </div>
-            </div>
+            </footer>
 
             <!-- Modal Select IP -->
             <div id="ipModal" class="modal fade" role="dialog">
@@ -92,6 +114,14 @@
 
                 </div>
             </div>
+        </div>
+
+        <div id="audioCollection">
+            <audio id="prijsAudio" src="audio/prijs.mp3" preload="auto"></audio>
+            <audio id="priceAudio" src="audio/price.mp3" preload="auto"></audio>
+            <audio id="appAudio" src="audio/app.mp3" preload="auto"></audio>
+            <audio id="lachAudio" src="audio/lachen.mp3" preload="auto"></audio>
+            <audio id="spannendAudio" src="audio/ticktock.mp3" preload="auto"></audio>
         </div>
 
         <!-- JQuery and Bootstrap libraries -->

@@ -7,6 +7,18 @@ export class WebElements {
     /*
             MAIN PAGE
      */
+    static readonly PRIJS_BUTTON: JQuery<HTMLButtonElement> = $("#PRIJS");
+    static readonly PRICE_BUTTON: JQuery<HTMLButtonElement> = $("#PRICE");
+    static readonly APP_BUTTON: JQuery<HTMLButtonElement> = $("#APPLAUS");
+    static readonly LACH_BUTTON: JQuery<HTMLButtonElement> = $("#LACHEN");
+    static readonly SPANNEND_BUTTON: JQuery<HTMLButtonElement> = $("#SPANNEND");
+    static readonly STOP_BUTTON: JQuery<HTMLButtonElement> = $("#STOP");
+
+    static readonly PRIJS_AUDIO: JQuery<HTMLAudioElement> = $("#prijsAudio");
+    static readonly PRICE_AUDIO: JQuery<HTMLAudioElement> = $("#priceAudio");
+    static readonly APP_AUDIO: JQuery<HTMLAudioElement> = $("#appAudio");
+    static readonly LACH_AUDIO: JQuery<HTMLAudioElement> = $("#lachAudio");
+    static readonly SPANNEND_AUDIO: JQuery<HTMLAudioElement> = $("#spannendAudio");
 
     /*
             MODALS

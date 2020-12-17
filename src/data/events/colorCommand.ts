@@ -6,6 +6,7 @@ import { CommandType, LightCommand } from "./lightCommand";
 import {HueAPIService} from "../../service/hueAPIService";
 import {Logger} from "../../util/logger";
 import {Session} from "../../static/session";
+import {Colors} from "../../util/colors";
 
 /**
  * HueScripts ColorCommand Class
@@ -85,5 +86,9 @@ export class ColorCommand implements LightCommand {
 
     public toString(): string {
         return "ColorCommand for light |" + this.light + "|, values |" + this.values.toString();
+    }
+
+    public static xy(red: number, green: number, blue: number): number[] {
+        return Colors.convertRGBtoXY(red, green, blue);
     }
 }

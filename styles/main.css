@@ -9,6 +9,10 @@ rowInput {
     -webkit-box-sizing:content-box;
 }
 
+.top-buffer {
+    margin-top:20px;
+}
+
 .font-small {
     font-size: 8px;
 }
