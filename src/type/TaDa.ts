@@ -1,31 +1,29 @@
 import {WebElements} from "../static/webElements";
 import {Main} from "../main";
 
-export class Applaus {
-    private static instance: Applaus;
-    private started: boolean;
+export class TaDa {
+
+    private static instance: TaDa;
     private stopped: boolean;
+    private started: boolean;
 
     private constructor() {
-        this.started = false;
         this.stopped = false;
+        this.started = false;
     }
 
     public static get() {
-        if (Applaus.instance == null) {
-            Applaus.instance = new Applaus();
+        if (TaDa.instance == null) {
+            TaDa.instance = new TaDa();
         }
-        return Applaus.instance;
+        return TaDa.instance;
     }
 
     public start() {
-        if (this.started) {
-            this.stop();
-            return;
-        }
+        Main.stopAllAudio();
         if (!this.stopped) {
             this.started = true;
-            WebElements.APP_AUDIO.get(0).play();
+            WebElements.TADA_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -33,9 +31,8 @@ export class Applaus {
     public stop() {
         if (this.started) {
             this.stopped = true;
-
-            WebElements.APP_AUDIO.get(0).pause();
-            WebElements.APP_AUDIO.get(0).currentTime = 0;
+            WebElements.TADA_AUDIO.get(0).pause();
+            WebElements.TADA_AUDIO.get(0).currentTime = 0;
         }
     }
 
@@ -52,6 +49,7 @@ export class Applaus {
         while (!this.stopped) {
             await this.sleep(1000);
         }
+
         this.stopped = false;
         this.started = false;
     }

@@ -8,6 +8,8 @@ import {Spannend} from "./type/Spannend";
 import {Impossible} from "./type/Impossible";
 import {Lachen} from "./type/Lachen";
 import {Applaus} from "./type/Applaus";
+import {TaDa} from "./type/TaDa";
+import {Eind} from "./type/Eind";
 
 $(() => {
     new Main();
@@ -28,13 +30,17 @@ export class Main {
         Session.get().changeToPage(1);
     }
 
-    public static stopAllAudio() {
+    public static stopAllAudio(fromButton: boolean = false) {
         Prijs.get().stop();
         Price.get().stop();
         Spannend.get().stop();
         Impossible.get().stop();
-        Lachen.get().stop();
-        Applaus.get().stop();
+        TaDa.get().stop();
+        Eind.get().stop();
+        if (fromButton) {
+            Lachen.get().stop();
+            Applaus.get().stop();
+        }
     }
 
     /**
@@ -49,6 +55,8 @@ export class Main {
         WebElements.IMPOSSIBLE_BUTTON.get()[0].addEventListener("click", (e:Event) => Impossible.get().start());
         WebElements.LACH_BUTTON.get()[0].addEventListener("click", (e:Event) => Lachen.get().start());
         WebElements.APP_BUTTON.get()[0].addEventListener("click", (e:Event) => Applaus.get().start());
-        WebElements.STOP_BUTTON.get()[0].addEventListener("click", (e:Event) => Main.stopAllAudio());
+        WebElements.TADA_BUTTON.get()[0].addEventListener("click", (e:Event) => TaDa.get().start());
+        WebElements.EIND_BUTTON.get()[0].addEventListener("click", (e:Event) => Eind.get().start());
+        WebElements.STOP_BUTTON.get()[0].addEventListener("click", (e:Event) => Main.stopAllAudio(true));
     }
 }

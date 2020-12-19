@@ -19,7 +19,10 @@ export class Lachen {
     }
 
     public start() {
-        Main.stopAllAudio();
+        if (this.started) {
+            this.stop();
+            return;
+        }
         if (!this.stopped) {
             this.started = true;
             WebElements.LACH_AUDIO.get(0).play();

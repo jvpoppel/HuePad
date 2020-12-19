@@ -13,6 +13,8 @@ export class WebElements {
     static readonly LACH_BUTTON: JQuery<HTMLButtonElement> = $("#LACHEN");
     static readonly SPANNEND_BUTTON: JQuery<HTMLButtonElement> = $("#SPANNEND");
     static readonly IMPOSSIBLE_BUTTON: JQuery<HTMLButtonElement> = $("#IMPOSSIBLE");
+    static readonly TADA_BUTTON: JQuery<HTMLButtonElement> = $("#TADA");
+    static readonly EIND_BUTTON: JQuery<HTMLButtonElement> = $("#EIND");
     static readonly STOP_BUTTON: JQuery<HTMLButtonElement> = $("#STOP");
 
     static readonly PRIJS_AUDIO: JQuery<HTMLAudioElement> = $("#prijsAudio");
@@ -21,6 +23,8 @@ export class WebElements {
     static readonly LACH_AUDIO: JQuery<HTMLAudioElement> = $("#lachAudio");
     static readonly SPANNEND_AUDIO: JQuery<HTMLAudioElement> = $("#spannendAudio");
     static readonly IMPOSSIBLE_AUDIO: JQuery<HTMLAudioElement> = $("#impossibleAudio");
+    static readonly TADA_AUDIO: JQuery<HTMLAudioElement> = $("#tadaAudio");
+    static readonly EIND_AUDIO: JQuery<HTMLAudioElement> = $("#eindAudio");
 
     /*
             MODALS
