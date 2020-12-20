@@ -10,6 +10,7 @@ import {Lachen} from "./type/Lachen";
 import {Applaus} from "./type/Applaus";
 import {TaDa} from "./type/TaDa";
 import {Eind} from "./type/Eind";
+import {Items} from "./model/Items";
 
 $(() => {
     new Main();
@@ -58,5 +59,8 @@ export class Main {
         WebElements.TADA_BUTTON.get()[0].addEventListener("click", (e:Event) => TaDa.get().start());
         WebElements.EIND_BUTTON.get()[0].addEventListener("click", (e:Event) => Eind.get().start());
         WebElements.STOP_BUTTON.get()[0].addEventListener("click", (e:Event) => Main.stopAllAudio(true));
+
+        WebElements.ROLL_BUTTON.get()[0].addEventListener("click", (e: Event) => Items.get().roll());
+        WebElements.RESET_BUTTON.get()[0].addEventListener("click", (e: Event) => Items.get().reset());
     }
 }

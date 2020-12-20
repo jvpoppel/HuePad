@@ -39,4 +39,9 @@ export class WebElements {
     static readonly BRIDGE_SELECT_DROPDOWN: JQuery<HTMLElement> = $('#bridgeSelect');
     static readonly BRIDGE_SELECT_CONFIRM: JQuery<HTMLElement> = $('#btnBridgeSelect');
     static BRIDGE_SELECTED_IP(): JQuery<HTMLElement> { return $('#bridgeSelect :selected'); }
+
+
+    static readonly ROLL_BUTTON: JQuery<HTMLButtonElement> = $("#ROLL");
+    static readonly RESET_BUTTON: JQuery<HTMLButtonElement> = $("#RESET");
+    static readonly ITEM: JQuery<HTMLSpanElement> = $("#ITEM");
 }

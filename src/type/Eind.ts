@@ -71,6 +71,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2600);
@@ -81,6 +82,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -91,6 +93,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -101,6 +104,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -111,6 +115,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -121,6 +126,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -131,6 +137,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -141,6 +148,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -151,6 +159,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -161,6 +170,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         await this.sleep(2700);
@@ -171,6 +181,7 @@ export class Eind {
 
         if (this.stopped) {
             await this.reset();
+            return;
         }
 
         // --- //
