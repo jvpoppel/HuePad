@@ -25,7 +25,6 @@ export class Applaus {
         }
         if (!this.stopped) {
             this.started = true;
-            WebElements.APP_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -33,9 +32,6 @@ export class Applaus {
     public stop() {
         if (this.started) {
             this.stopped = true;
-
-            WebElements.APP_AUDIO.get(0).pause();
-            WebElements.APP_AUDIO.get(0).currentTime = 0;
         }
     }
 

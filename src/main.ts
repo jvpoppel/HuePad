@@ -2,15 +2,15 @@ import {WebElements} from "./static/webElements";
 import {HueAccount} from "./service/hueAccount";
 import {HueAPIService} from "./service/hueAPIService";
 import {Session} from "./static/session";
-import {Prijs} from "./type/Prijs";
-import {Price} from "./type/Price";
+import {Knipper} from "./type/Knipper";
+import {Fade} from "./type/Fade";
 import {Spannend} from "./type/Spannend";
 import {Impossible} from "./type/Impossible";
 import {Lachen} from "./type/Lachen";
 import {Applaus} from "./type/Applaus";
 import {TaDa} from "./type/TaDa";
 import {Eind} from "./type/Eind";
-import {Items} from "./model/Items";
+import {Reset} from "./type/Reset";
 
 $(() => {
     new Main();
@@ -32,8 +32,8 @@ export class Main {
     }
 
     public static stopAllAudio(fromButton: boolean = false) {
-        Prijs.get().stop();
-        Price.get().stop();
+        Knipper.get().stop();
+        Fade.get().stop();
         Spannend.get().stop();
         Impossible.get().stop();
         TaDa.get().stop();
@@ -41,6 +41,8 @@ export class Main {
         if (fromButton) {
             Lachen.get().stop();
             Applaus.get().stop();
+
+            Reset.execute();
         }
     }
 
@@ -50,17 +52,14 @@ export class Main {
     private setupBaseEventListeners() {
 
         WebElements.BRIDGE_SELECT_CONFIRM.get()[0].addEventListener("click", (e: Event) => HueAPIService.createAccountOnIP());
-        WebElements.PRIJS_BUTTON.get()[0].addEventListener("click", (e:Event) => Prijs.get().start());
-        WebElements.PRICE_BUTTON.get()[0].addEventListener("click", (e:Event) => Price.get().start());
+        WebElements.KNIPPER_BUTTON.get()[0].addEventListener("click", (e:Event) => Knipper.get().start());
+        WebElements.ROOD_BUTTON.get()[0].addEventListener("click", (e:Event) => Session.get().setRed());
         WebElements.SPANNEND_BUTTON.get()[0].addEventListener("click", (e:Event) => Spannend.get().start());
-        WebElements.IMPOSSIBLE_BUTTON.get()[0].addEventListener("click", (e:Event) => Impossible.get().start());
-        WebElements.LACH_BUTTON.get()[0].addEventListener("click", (e:Event) => Lachen.get().start());
-        WebElements.APP_BUTTON.get()[0].addEventListener("click", (e:Event) => Applaus.get().start());
+        WebElements.FADE_BUTTON.get()[0].addEventListener("click", (e:Event) => Fade.get().start());
+        WebElements.BLAUW_BUTTON.get()[0].addEventListener("click", (e:Event) => Session.get().setBlue());
+        WebElements.GROEN_BUTTON.get()[0].addEventListener("click", (e:Event) => Session.get().setGreen());
         WebElements.TADA_BUTTON.get()[0].addEventListener("click", (e:Event) => TaDa.get().start());
         WebElements.EIND_BUTTON.get()[0].addEventListener("click", (e:Event) => Eind.get().start());
         WebElements.STOP_BUTTON.get()[0].addEventListener("click", (e:Event) => Main.stopAllAudio(true));
-
-        WebElements.ROLL_BUTTON.get()[0].addEventListener("click", (e: Event) => Items.get().roll());
-        WebElements.RESET_BUTTON.get()[0].addEventListener("click", (e: Event) => Items.get().reset());
     }
 }

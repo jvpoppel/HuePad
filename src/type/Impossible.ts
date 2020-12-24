@@ -25,7 +25,6 @@ export class Impossible {
         Main.stopAllAudio();
         if (!this.stopped) {
             this.started = true;
-            WebElements.IMPOSSIBLE_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -33,9 +32,6 @@ export class Impossible {
     public stop() {
         if (this.started) {
             this.stopped = true;
-
-            WebElements.IMPOSSIBLE_AUDIO.get(0).pause();
-            WebElements.IMPOSSIBLE_AUDIO.get(0).currentTime = 0;
         }
 
     }

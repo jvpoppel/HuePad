@@ -23,7 +23,6 @@ export class TaDa {
         Main.stopAllAudio();
         if (!this.stopped) {
             this.started = true;
-            WebElements.TADA_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -31,8 +30,6 @@ export class TaDa {
     public stop() {
         if (this.started) {
             this.stopped = true;
-            WebElements.TADA_AUDIO.get(0).pause();
-            WebElements.TADA_AUDIO.get(0).currentTime = 0;
         }
     }
 

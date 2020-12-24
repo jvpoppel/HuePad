@@ -12,11 +12,14 @@ export class Session {
     private pagesMap: TSMap<number, Page>;
     private currentCommandModalType: CommandType;
 
+    private currentColor: number[];
+
     private constructor() {
 
         this.currentPageID = 1;
         this.foundLights = new Array<number>();
         this.pagesMap = new TSMap<number, Page>();
+        this.currentColor = [255, 170, 0];
         for (let i = 1; i <= 6; i++) {
             let pageNumber = i;
             this.pagesMap.set(pageNumber, new Page(pageNumber));
@@ -67,5 +70,21 @@ export class Session {
     public setPageMap(pageMap: TSMap<number, Page>): void {
         this.pagesMap = pageMap;
         this.changeToPage(1);
+    }
+
+    public getCurrentColor(): number[] {
+        return this.currentColor;
+    }
+
+    public setRed() {
+        this.currentColor = [255, 0, 0];
+    }
+
+    public setGreen() {
+        this.currentColor = [0, 190, 0];
+    }
+
+    public setBlue() {
+        this.currentColor = [0, 0, 255];
     }
 }

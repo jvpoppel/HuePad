@@ -25,7 +25,6 @@ export class Spannend {
         Main.stopAllAudio();
         if (!this.stopped) {
             this.started = true;
-            WebElements.SPANNEND_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -33,9 +32,6 @@ export class Spannend {
     public stop() {
         if (this.started) {
             this.stopped = true;
-
-            WebElements.SPANNEND_AUDIO.get(0).pause();
-            WebElements.SPANNEND_AUDIO.get(0).currentTime = 0;
         }
     }
 
@@ -67,9 +63,6 @@ export class Spannend {
             }
             new ColorCommand(-1, Colors.convertRGBtoXY(0, 0, 125).concat(20)).execute();
         }
-        new ColorCommand(-1, ColorCommand.xy(255, 170, 0).concat(10)).execute();
-        await this.sleep(100);
-        new BrightnessCommand(-1, [255]).execute();
         this.stopped = false;
         this.started = false;
     }

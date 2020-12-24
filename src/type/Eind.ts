@@ -28,7 +28,6 @@ export class Eind {
         Main.stopAllAudio();
         if (!this.stopped) {
             this.started = true;
-            WebElements.EIND_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -36,8 +35,6 @@ export class Eind {
     public stop() {
         if (this.started) {
             this.stopped = true;
-            WebElements.EIND_AUDIO.get(0).pause();
-            WebElements.EIND_AUDIO.get(0).currentTime = 0;
         }
     }
 

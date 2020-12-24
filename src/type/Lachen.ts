@@ -25,7 +25,6 @@ export class Lachen {
         }
         if (!this.stopped) {
             this.started = true;
-            WebElements.LACH_AUDIO.get(0).play();
             this.hueLoop();
         }
     }
@@ -33,9 +32,6 @@ export class Lachen {
     public stop() {
         if (this.started) {
             this.stopped = true;
-
-            WebElements.LACH_AUDIO.get(0).pause();
-            WebElements.LACH_AUDIO.get(0).currentTime = 0;
         }
     }
 
